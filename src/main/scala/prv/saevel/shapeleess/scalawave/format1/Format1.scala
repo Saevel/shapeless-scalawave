@@ -2,9 +2,8 @@ package prv.saevel.shapeleess.scalawave.format1
 
 import java.nio.ByteBuffer
 
-trait Format1[A] {
+import prv.saevel.shapeleess.scalawave.{Format, FormatFactory}
 
-  def toFormat1(a: A): ByteBuffer
+trait Format1[A] extends Format[A, ByteBuffer]
 
-  def fromFormat1(data: ByteBuffer): A
-}
+object Format1 extends FormatFactory[ByteBuffer]

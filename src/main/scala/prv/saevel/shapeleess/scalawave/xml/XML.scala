@@ -1,8 +1,7 @@
 package prv.saevel.shapeleess.scalawave.xml
 
+import prv.saevel.shapeleess.scalawave.FormatFactory
+
 import scala.xml.Node
 
-object XML {
-
-  def deserialize[A](xml: Node)(implicit fromXml: XmlFormat[A]): A = fromXml.fromXml(xml)
-}
+object XML extends FormatFactory[Node]

@@ -1,10 +1,7 @@
 package prv.saevel.shapeleess.scalawave.xml
 
+import prv.saevel.shapeleess.scalawave.Format
+
 import scala.xml.Node
 
-trait XmlFormat[A] {
-
-  def toXml(a: A): Node
-
-  def fromXml(node: Node): A
-}
+trait XmlFormat[A] extends Format[A, Node]

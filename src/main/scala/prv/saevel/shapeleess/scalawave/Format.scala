@@ -1,6 +1,8 @@
 package prv.saevel.shapeleess.scalawave
 
-trait Format {
+trait Format[A, Output] {
 
-  def serialize()
+  def serialize(a: A): Output
+
+  def deserialize(o: Output): A
 }
