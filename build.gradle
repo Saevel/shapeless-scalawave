@@ -1,0 +1,15 @@
+group 'prv.saevel.shapeless.scalawave'
+version '1.0'
+
+apply plugin: "scala"
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile group: 'com.chuusai', name: 'shapeless_2.12', version: '2.3.3'
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.6'
+    compile group: 'org.scala-lang.modules', name: 'scala-xml_2.12', version: '1.1.0'
+}
