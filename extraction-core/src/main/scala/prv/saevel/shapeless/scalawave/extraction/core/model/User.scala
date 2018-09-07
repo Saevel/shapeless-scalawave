@@ -1,16 +1,9 @@
 package prv.saevel.shapeless.scalawave.extraction.core.model
 
-import java.io.{ByteArrayInputStream, ByteArrayOutputStream, ObjectInputStream, ObjectOutputStream}
-
-import prv.saevel.shapeless.scalawave.extraction.core.csv.CsvFormat
-import prv.saevel.shapeless.scalawave.extraction.core.format1.Format1
-import prv.saevel.shapeless.scalawave.extraction.core.json.JsonFormat
-import spray.json.{JsNumber, JsObject, JsString, JsValue}
-
 case class User(name: String, surname: String, age: Int)
 
+/*
 object User {
-
   implicit val userCsvFormat = new CsvFormat[User] {
     override def serialize(a: User): List[String] = List(a.name, a.surname, a.age.toString)
 
@@ -59,3 +52,4 @@ object User {
     }
   }
 }
+*/

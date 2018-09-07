@@ -8,9 +8,13 @@ repositories {
     jcenter()
 }
 
+def scalaVersionMajor = "2.11"
+
+def scalaVersionMinor = "6"
+
 dependencies {
-    compile group: 'com.chuusai', name: 'shapeless_2.12', version: '2.3.3'
-    compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.6'
-    compile group: 'org.scala-lang.modules', name: 'scala-xml_2.12', version: '1.1.0'
-    compile group: 'io.spray', name: 'spray-json_2.12', version: '1.3.4'
+    compile group: 'com.chuusai', name: "shapeless_${scalaVersionMajor}", version: '2.3.3'
+    compile group: 'org.scala-lang', name: 'scala-library', version: "${scalaVersionMajor}.${scalaVersionMinor}"
+    compile group: 'org.scala-lang.modules', name: "scala-xml_${scalaVersionMajor}", version: '1.1.0'
+    compile group: 'io.spray', name: "spray-json_${scalaVersionMajor}", version: '1.3.4'
 }

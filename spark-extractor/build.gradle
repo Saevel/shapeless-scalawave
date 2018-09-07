@@ -2,17 +2,24 @@ group 'prv.saevel.shapeless.scalawave'
 
 version '1.0'
 
-// TODO: Scala Plugin
+apply plugin: 'scala'
 
 repositories {
     mavenCentral()
     jcenter()
 }
 
+def scalaVersionMajor = "2.11"
+
+def sparkVersion = "2.2.0"
+
 dependencies {
 
-    // TODO: Spark
+    compile group: 'org.apache.spark', name: "spark-sql_${scalaVersionMajor}", version: sparkVersion
 
-    // TODO: extraction-core module
+    compile group: 'org.typelevel', name: "frameless-dataset_${scalaVersionMajor}", version: '0.4.0'
+    compile group: 'org.typelevel', name: "frameless-cats_${scalaVersionMajor}", version: '0.4.0'
+
+    compile project(':extraction-core')
 }
 

@@ -2,21 +2,25 @@ package prv.saevel.shapeless.scalawave.extraction.core
 
 import prv.saevel.shapeless.scalawave.extraction.core.json.JsonFormat
 import prv.saevel.shapeless.scalawave.extraction.core.model.User
-import spray.json.JsValue
+import spray.json.{DefaultJsonProtocol, JsValue}
 
 import scala.xml.Node
 
-object Application extends App {
+object Application extends App with DefaultJsonProtocol {
 
   println("Hello, Shapeless!")
 
+  //implicit val userJsonFormat = jsonFormat3(User)
+
   import prv.saevel.shapeless.scalawave.extraction.core.csv._
+
+  import prv.saevel.shapeless.scalawave.extraction.core.json._
 
   import prv.saevel.shapeless.scalawave.extraction.core.xml._
 
   import prv.saevel.shapeless.scalawave.extraction.core.format2._
 
-  val xmlToJson = Conversion.conversion[User, Seq[Node], XmlFormat[User], JsValue, JsonFormat[User]]
+  //val xmlToJson = Conversion.conversion[User, Seq[Node], XmlFormat[User], JsValue, JsonFormat[User]]
 
   val xmlToCsv = Conversion.conversion[User, Seq[Node], XmlFormat[User], List[String], CsvFormat[User]]
 
@@ -28,7 +32,7 @@ object Application extends App {
 
   val userCsv = List("Kamil", "Owczarek", "28")
 
-  println(s"XML => JSON: ${xmlToJson(userXml).toString}")
+  //println(s"XML => JSON: ${xmlToJson(userXml).toString}")
 
   println(s"XML => CSV: ${xmlToCsv(userXml).mkString(", ")}")
 

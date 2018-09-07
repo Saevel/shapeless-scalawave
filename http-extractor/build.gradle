@@ -1,14 +1,22 @@
 group 'prv.saevel.shapeless.scalawave'
 version '1.0'
 
+apply plugin: "scala"
+
 repositories {
     mavenCentral()
     jcenter()
 }
 
-dependencies {
-    // TODO: Akka HTTP
 
-    // TODO: extraction-core module
+def scalaVersionMajor = "2.11"
+
+dependencies {
+
+    compile group: 'com.typesafe.akka', name: "akka-http_${scalaVersionMajor}", version: '10.1.5'
+    compile group: 'com.typesafe.akka', name: "akka-http-spray-json_${scalaVersionMajor}", version: '10.1.5'
+    compile group: 'com.typesafe.akka', name: "akka-stream_${scalaVersionMajor}", version: '2.5.12'
+
+    compile project(':extraction-core')
 }
 

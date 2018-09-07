@@ -11,7 +11,7 @@ trait JsonFormat[A] extends Format[A]{
 
 object JsonFormat {
 
-  implicit def jsonFormat[T](rootFormat: SprayJsonFormat[T]): JsonFormat[T] = new JsonFormat[T] {
+  implicit def jsonFormat[T](implicit rootFormat: SprayJsonFormat[T]): JsonFormat[T] = new JsonFormat[T] {
 
     override def serialize(a: T): JsValue = rootFormat.write(a)
 
