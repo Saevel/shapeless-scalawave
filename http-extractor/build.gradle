@@ -1,0 +1,14 @@
+group 'prv.saevel.shapeless.scalawave'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    // TODO: Akka HTTP
+
+    // TODO: extraction-core module
+}
+

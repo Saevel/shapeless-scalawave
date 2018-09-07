@@ -1,2 +1,8 @@
 rootProject.name = 'shapeless-scalawave'
 
+include 'extraction-core'
+
+include 'spark-extractor'
+
+include 'http-extractor'
+

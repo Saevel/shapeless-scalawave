@@ -1,0 +1,18 @@
+group 'prv.saevel.shapeless.scalawave'
+
+version '1.0'
+
+// TODO: Scala Plugin
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+
+    // TODO: Spark
+
+    // TODO: extraction-core module
+}
+
